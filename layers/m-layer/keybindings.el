@@ -3,8 +3,12 @@
 (global-set-key (kbd "M-<down>") 'move-text-down)
 
 ;;; packages' key-bindings
+;; ace-jump
 (global-set-key (kbd "C-x o") 'ace-window)
 (evil-leader/set-key "." 'ace-jump-buffer)
+
+;; helm
+(global-set-key (kbd "C-c i") 'helm-imenu)
 
 ;;; Hook key-bindings
 ;; coffee-mode
@@ -28,6 +32,6 @@
 
 
 ;; martin
-(global-set-key (kbd "M-%") 'query-replace-regexp)
+(global-set-key (kbd "M-%") 'pcre-query-replace-regexp)
 (global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/Dropbox/Martin/doc/note/fragments.org")))
 (global-set-key (kbd "<f7>") (lambda() (interactive)(find-file "~/Dropbox/Martin/doc/GTD.org")))

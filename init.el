@@ -55,12 +55,12 @@ values."
      scheme
      lua
      haskell
-     python
-     html
-     javascript
      java
      scala
      (clojure :variables clojure-enable-fancify-symbols t)
+     python
+     html
+     javascript
 
      dockerfile
      react
@@ -228,7 +228,9 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-)
+  ;; use paredit bindings
+  (sp-use-paredit-bindings)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

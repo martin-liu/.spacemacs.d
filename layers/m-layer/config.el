@@ -6,6 +6,7 @@
 (setq mac-option-modifier 'super)
 
 (global-visual-line-mode t)
+(global-linum-mode t)
 
 
 ;; ace-window, used to jump between windows
@@ -13,14 +14,15 @@
 
 ;; Org mode
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (setq truncate-lines nil)
-            (setq org-startup-indented t)
-            (auto-fill-mode 1)
-            ;; highlight code
-            (setq org-src-fontify-natively t)
-            (org-display-inline-images)))
+(eval-after-load 'org-mode
+  '(add-hook 'org-mode-hook
+           (lambda ()
+             (setq truncate-lines nil)
+             (setq org-startup-indented t)
+             (auto-fill-mode 1)
+             ;; highlight code
+             (setq org-src-fontify-natively t)
+             (org-display-inline-images))))
 
 ;;; Set default org file to store note
 (setq org-default-notes-file "~/Dropbox/Martin/doc/GTD.org")
@@ -41,9 +43,12 @@
 ;; Org export
 (setq org-export-htmlize-output-type 'css)
 
-(add-hook 'prog-mode-hook
-          '(lambda ()
-             (yas-minor-mode)))
+;; -------------------------------------------
+;;; Programming
+;; -------------------------------------------
+
+;; setup indent
+(m-setup-indent 2)
 
 ;; emacs-eclim
 ;; (require 'eclim)
@@ -69,25 +74,16 @@
 (setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/local/bin/scala:" (getenv "PATH")))
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(define-key company-active-map [tab] nil)
+;(define-key company-active-map [tab] nil)
 
 
 ;;; Web
-;; js2-mode
-(custom-set-variables
- '(js2-basic-offset 2))
-
 ;; web-mode
-(add-hook 'web-mode-hook
-          (lambda ()
-            (setq web-mode-markup-indent-offset 2)
-            (setq web-mode-css-indent-offset 2)
-            (setq web-mode-code-indent-offset 2)))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
 
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|127.0.0.1\\)")
-        ("http" . "127.0.0.1:8118")))
+;;(setq url-proxy-services
+;;      '(("no_proxy" . "^\\(localhost\\|127.0.0.1\\)")
+;;        ("http" . "127.0.0.1:8118")))
 
