@@ -8,6 +8,8 @@
 (global-visual-line-mode t)
 (global-linum-mode t)
 
+;; save buffer when focus outl
+(add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 
 ;; ace-window, used to jump between windows
 (setq aw-keys '(?d ?h ?t ?n ?s ?6 ?7 ?8 ?9))

@@ -46,7 +46,6 @@ values."
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
 
      github
-     osx
 
      ;; languages
      markdown
@@ -61,6 +60,7 @@ values."
      python
      html
      javascript
+     typescript
 
      dockerfile
      react
@@ -230,6 +230,7 @@ user code."
 layers configuration. You are free to put any user code."
   ;; use paredit bindings
   (sp-use-paredit-bindings)
+  (global-company-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -2,6 +2,7 @@
 
 (defun m-setup-indent (n)
   ;; web development
+  (setq typescript-indent-level n) ; typescript
   (setq coffee-tab-width n) ; coffeescript
   (setq javascript-indent-level n) ; javascript-mode
   (setq js-indent-level n) ; js-mode
