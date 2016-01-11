@@ -8,8 +8,14 @@
 (global-visual-line-mode t)
 (global-linum-mode t)
 
-;; save buffer when focus outl
+;; save buffer when focus out
 (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
+;; automatically save buffers associated with files on buffer switch
+;; and on windows switch
+(defadvice switch-to-buffer (before save-buffer-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-window (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
 
 ;; ace-window, used to jump between windows
 (setq aw-keys '(?d ?h ?t ?n ?s ?6 ?7 ?8 ?9))
