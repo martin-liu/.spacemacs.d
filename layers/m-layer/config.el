@@ -55,6 +55,8 @@
 ;;; Programming
 ;; -------------------------------------------
 
+(setq projectile-use-git-grep 't)
+
 ;; setup indent
 (m-setup-indent 2)
 
