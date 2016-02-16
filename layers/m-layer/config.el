@@ -17,6 +17,9 @@
 (defadvice other-window (before other-window-now activate)
   (when buffer-file-name (save-buffer)))
 
+;; delete trailing whitespace when save file
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
 ;; ace-window, used to jump between windows
 (setq aw-keys '(?d ?h ?t ?n ?s ?6 ?7 ?8 ?9))
 
@@ -96,4 +99,3 @@
 ;;(setq url-proxy-services
 ;;      '(("no_proxy" . "^\\(localhost\\|127.0.0.1\\)")
 ;;        ("http" . "127.0.0.1:8118")))
-
