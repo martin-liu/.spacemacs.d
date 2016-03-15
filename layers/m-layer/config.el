@@ -22,6 +22,8 @@
 
 ;; ace-window, used to jump between windows
 (setq aw-keys '(?d ?h ?t ?n ?s ?6 ?7 ?8 ?9))
+;; ace-jump-buffer
+(setq avy-keys (number-sequence ?a ?z))
 
 ;; Org mode
 
