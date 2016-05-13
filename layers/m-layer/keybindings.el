@@ -1,6 +1,6 @@
 ;;; basic keybindings
-(global-set-key (kbd "M-S-<up>") 'move-text-up)
-(global-set-key (kbd "M-S-<down>") 'move-text-down)
+(global-set-key (kbd "M-U") 'move-text-up) ; M + S + u
+(global-set-key (kbd "M-D") 'move-text-down)
 
 ;;; packages' key-bindings
 ;; ace-jump
