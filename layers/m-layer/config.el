@@ -86,8 +86,7 @@
 
 ;;; Scala
 ;; ensime
-(setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
-(setenv "PATH" (concat "/usr/local/bin/scala:" (getenv "PATH")))
+(setq ensime-sbt-command "/usr/local/bin/sbt")
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;(define-key company-active-map [tab] nil)
 
