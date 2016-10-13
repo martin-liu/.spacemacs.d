@@ -54,7 +54,7 @@ values."
      scheme
      lua
      haskell
-     java
+     ;java ;; disable java layer, use scala layer to support java
      scala
      (clojure :variables clojure-enable-fancify-symbols t)
      python

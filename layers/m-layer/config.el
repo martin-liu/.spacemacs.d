@@ -8,6 +8,9 @@
 (global-visual-line-mode t)
 (global-linum-mode t)
 
+;; debug on error
+(setq debug-on-error t)
+
 ;; save buffer when focus out
 (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 ;; automatically save buffers associated with files on buffer switch
@@ -65,20 +68,6 @@
 ;; setup indent
 (m-setup-indent 2)
 
-;; emacs-eclim
-;; (require 'eclim)
-;; (require 'eclimd)
-;; (custom-set-variables
-;;  '(eclim-eclipse-dirs '("/Applications/eclipse"))
-;;  '(eclim-executable "/Applications/eclipse/eclim")
-;;  '(eclimd-default-workspace "~/martin/code/my/java/")
-;;  '(eclim-auto-save t)
-;;  '(eclim-print-debug-messages f))
-;; (add-hook 'java-mode-hook '(lambda () (eclim-mode t)))
-
-;; (require 'company-emacs-eclim)
-;; (company-emacs-eclim-setup)
-
 
 ;;; Scheme
 ;; geiser
@@ -87,9 +76,14 @@
 ;;; Scala
 ;; ensime
 (setq ensime-sbt-command "/usr/local/bin/sbt")
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;(define-key company-active-map [tab] nil)
 
+
+;;; Clojure
+;; clojurescript
+(setq cider-cljs-lein-repl
+      "(do (user/run)
+           (user/browser-repl))")
 
 ;;; Web
 ;; web-mode
