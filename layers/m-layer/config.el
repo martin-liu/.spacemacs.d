@@ -11,6 +11,8 @@
 ;; debug on error
 (setq debug-on-error t)
 
+;; disable lockfiles
+(setq create-lockfiles nil)
 ;; save buffer when focus out
 (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 ;; automatically save buffers associated with files on buffer switch
@@ -27,6 +29,7 @@
 (setq aw-keys '(?d ?h ?t ?n ?s ?6 ?7 ?8 ?9))
 ;; ace-jump-buffer
 (setq avy-keys (number-sequence ?a ?z))
+
 
 ;; Org mode
 
@@ -94,3 +97,8 @@
 ;;(setq url-proxy-services
 ;;      '(("no_proxy" . "^\\(localhost\\|127.0.0.1\\)")
 ;;        ("http" . "127.0.0.1:8118")))
+
+
+;; sh
+(spacemacs|defvar-company-backends sh-mode)
+(spacemacs|add-company-hook sh-mode)
