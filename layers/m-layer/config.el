@@ -78,24 +78,6 @@
 (setq python-shell--interpreter 'python)
 (setq python-shell--interpreter-args "-i")
 (setq python-shell-prompt-detect-failure-warning nil)
-;; override `company-anaconda-prefix' function to prevent `args-out-of-range' error
-(defun company-anaconda-prefix ()
-  "Grab prefix at point.
-Properly detect strings, comments and attribute access."
-  (and anaconda-mode
-       (not (company-in-string-or-comment))
-       (--if-let (when (or (looking-at "\\_>")
-                           (looking-back "\\." (- (point) 1)))
-                   (save-match-data
-                     (let ((line (buffer-substring-no-properties
-                                  (line-beginning-position)
-                                  (point))))
-                       (when (string-match "\\(?:[a-zA-Z_][a-zA-Z0-9_.]*\\|\"[^\"]*\".\\)\\'" line)
-                         (match-string 0 line)))))
-           (if (looking-back "\\." (- (point) 1))
-               (cons it t)
-             it)
-         'stop)))
 
 ;;; Scheme
 ;; geiser
@@ -125,5 +107,5 @@ Properly detect strings, comments and attribute access."
 
 
 ;; sh
-(spacemacs|defvar-company-backends sh-mode)
-(spacemacs|add-company-hook sh-mode)
+;(spacemacs|defvar-company-backends sh-mode)
+;(spacemacs|add-company-hook sh-mode)
