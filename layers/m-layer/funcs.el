@@ -126,3 +126,22 @@
          (narrow-to-region (region-beginning) (region-end)))
         ((derived-mode-p 'org-mode) (org-narrow-to-subtree))
         (t (narrow-to-defun))))
+
+;; python company-anaconda node hack
+(defun company-anaconda-prefix ()
+  "Grab prefix at point.
+Properly detect strings, comments and attribute access."
+  (and anaconda-mode
+       (not (company-in-string-or-comment))
+       (--if-let (when (or (looking-at "\\_>")
+                           (looking-back "\\." (- (point) 1)))
+                   (save-match-data
+                     (let ((line (buffer-substring-no-properties
+                                  (line-beginning-position)
+                                  (point))))
+                       (when (string-match "[a-zA-Z_][a-zA-Z0-9_.]*\\'" line)
+                         (match-string 0 line)))))
+           (if (looking-back "\\." (- (point) 1))
+               (cons it t)
+             it)
+         'stop)))
