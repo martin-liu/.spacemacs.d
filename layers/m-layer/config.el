@@ -64,6 +64,13 @@
 ;; Org export
 (setq org-export-htmlize-output-type 'css)
 
+
+;;; Styles
+;; all-the-icons
+(setq inhibit-compacting-font-caches t)
+;; neotree use all-the-icons theme
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
 ;; -------------------------------------------
 ;;; Programming
 ;; -------------------------------------------

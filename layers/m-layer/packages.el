@@ -13,8 +13,9 @@
       '(
         color-theme-sanityinc-tomorrow
         ace-jump-buffer
+        all-the-icons
         ))
 
-;; programmatically defin the init functions
+;; programmatically define the init functions
 (dolist (pkg m-layer-packages)
-  (eval `(defun ,(intern (format "m-layer/init-%S" pkg)) nil)))
+    (eval `(defun ,(intern (format "m-layer/init-%S" pkg)) nil)))
