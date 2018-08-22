@@ -13,7 +13,9 @@
       '(
         color-theme-sanityinc-tomorrow
         ace-jump-buffer
+        yasnippet-snippets
         all-the-icons
+        go-dlv                          ; go debug tool `delve'
         ))
 
 ;; programmatically define the init functions
