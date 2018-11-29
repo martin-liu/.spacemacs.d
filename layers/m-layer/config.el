@@ -5,9 +5,6 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
-(global-visual-line-mode t)
-(global-linum-mode t)
-
 ;; debug on error
 (setq debug-on-error t)
 
@@ -46,8 +43,8 @@
              (org-display-inline-images))))
 
 ;;; Set default org file to store note
-(setq org-default-notes-file "~/Dropbox/Martin/doc/GTD.org")
-(setq org-agenda-files '("~/Dropbox/Martin/doc/"))
+(setq org-default-notes-file "~/GoogleDrive/doc/GTD.org")
+(setq org-agenda-files '("~/GoogleDrive/doc/"))
 
 ;;; Set org tag list
 (setq org-tag-alist '(("@work" . ?w) ("@me" . ?m)))
@@ -58,7 +55,7 @@
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline "" "Tasks") "* TODO %?\n %i\n")
         ("n" "NOTE" entry (file+headline "" "Notes") "* NOTE - %?\n %i\n %a")
-        ("j" "Journal" entry (file+datetree "~/Dropbox/Martin/doc/journal.org")
+        ("j" "Journal" entry (file+datetree "~/GoogleDrive/doc/journal.org")
          "* %U\n%?")))
 
 ;; Org export
@@ -80,6 +77,20 @@
 ;; setup indent
 (m-setup-indent 2)
 
+;;; Markdown
+(setq markdown-command
+      (concat
+       "/usr/local/bin/pandoc"
+       " --from=markdown --to=html5"
+       " --standalone"
+       " --include-in-header=" (concat (helm-current-directory) "files/markdown_header.tpl")
+       " --metadata pagetitle=\"markdown\""
+       " --css=\"https://cdn.jsdelivr.net/gh/nicolashery/markdownpad-github/markdownpad-github.css\""
+       " --webtex"
+       " --highlight-style=pygments"
+       ))
+(setq markdown-enable-math 't)
+(setq shr-color-visible-luminance-min 70)
 
 ;;; Python
 (setq python-shell--interpreter 'python)

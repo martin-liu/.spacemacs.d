@@ -33,8 +33,8 @@
 
 ;; martin
 (global-set-key (kbd "M-%") 'pcre-query-replace-regexp)
-(global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/Dropbox/Martin/doc/note/fragments.org")))
-(global-set-key (kbd "<f7>") (lambda() (interactive)(find-file "~/Dropbox/Martin/doc/GTD.org")))
+(global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/GoogleDrive/doc/note/fragments.org")))
+(global-set-key (kbd "<f7>") (lambda() (interactive)(find-file "~/GoogleDrive/doc/GTD.org")))
 
 ;; `Space o'
 (spacemacs/set-leader-keys
