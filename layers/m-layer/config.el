@@ -83,7 +83,7 @@
        "/usr/local/bin/pandoc"
        " --from=markdown --to=html5"
        " --standalone"
-       " --include-in-header=" (concat (helm-current-directory) "files/markdown_header.tpl")
+       " --include-in-header=" (concat default-directory "files/markdown_header.tpl")
        " --metadata pagetitle=\"markdown\""
        " --css=\"https://cdn.jsdelivr.net/gh/nicolashery/markdownpad-github/markdownpad-github.css\""
        " --webtex"
