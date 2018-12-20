@@ -1,6 +1,8 @@
 ;;; basic keybindings
 (global-set-key (kbd "M-U") 'move-text-up) ; M + S + u
 (global-set-key (kbd "M-D") 'move-text-down)
+;; for evil mode
+(global-set-key (kbd "M-`") 'evil-escape)
 
 ;;; packages' key-bindings
 ;; ace-jump
