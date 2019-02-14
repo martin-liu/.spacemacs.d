@@ -63,6 +63,7 @@ values."
      ;haskell
      ;java ;; disable java layer, use scala layer to support java
      scala
+     kotlin
      (clojure :variables clojure-enable-fancify-symbols t)
      (python :variables python-backend 'lsp)
      ;php
@@ -122,6 +123,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-mode-line-theme 'spacemacs
    dotspacemacs-themes '(sanityinc-tomorrow-eighties
                          leuven
                          monokai
