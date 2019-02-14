@@ -17,7 +17,7 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(rust
+   '(
      restclient
      nginx
      octave
@@ -55,7 +55,7 @@ values."
      lsp
      ;; languages
      markdown
-     latex
+     ;latex
      sql
      emacs-lisp
      ;scheme
