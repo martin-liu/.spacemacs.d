@@ -31,7 +31,6 @@
 (setq tramp-default-method "ssh")
 
 ;; Org mode
-
 (eval-after-load 'org-mode
   '(add-hook 'org-mode-hook
            (lambda ()
@@ -58,14 +57,17 @@
         ("j" "Journal" entry (file+datetree "~/GoogleDrive/doc/journal.org")
          "* %U\n%?")))
 
-;; Org export
+;;; Org export
 (setq org-export-htmlize-output-type 'css)
 
 
-;;; Styles
-;; all-the-icons
+;; Styles
+;;; visual line mode
+(global-visual-line-mode)
+
+;;; all-the-icons
 (setq inhibit-compacting-font-caches t)
-;; neotree use all-the-icons theme
+;;; neotree use all-the-icons theme
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;; -------------------------------------------
@@ -74,7 +76,7 @@
 
 (setq projectile-use-git-grep 't)
 
-;; setup indent
+;;; setup indent
 (m-setup-indent 2)
 
 ;;; Markdown
