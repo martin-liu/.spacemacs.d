@@ -4,6 +4,8 @@
 ;; MAC: Use command key as M, option key as S
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
+;; fix https bad request issue
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 ;; debug on error
 (setq debug-on-error t)
