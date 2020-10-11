@@ -76,6 +76,9 @@
 ;;; Programming
 ;; -------------------------------------------
 
+;;; evil
+(global-set-key (kbd "C-c C-g") 'evil-force-normal-state)
+
 (setq projectile-use-git-grep 't)
 
 ;;; setup indent
@@ -107,7 +110,7 @@
 
 ;;; Scala
 ;; ensime
-(setq ensime-sbt-command "/usr/local/bin/sbt")
+;(setq ensime-sbt-command "/usr/local/bin/sbt")
 ;(define-key company-active-map [tab] nil)
 
 
