@@ -33,7 +33,8 @@ values."
      auto-completion
      better-defaults
      ivy
-     org
+     (org :variables
+          org-enable-roam-support t)
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
