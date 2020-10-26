@@ -32,6 +32,7 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     ivy
      org
      (shell :variables
             shell-default-shell 'ansi-term
@@ -225,9 +226,6 @@ values."
    ;; (default nil)
    dotspacemacs-persistent-server nil
    ;; List of search tool executable names. Spacemacs uses the first installed
-   ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
-   ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
