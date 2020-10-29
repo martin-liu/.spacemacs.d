@@ -62,6 +62,8 @@
 ;;; Org export
 (setq org-export-htmlize-output-type 'css)
 
+;;; org reveal.js
+(setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
 
 ;; Styles
 ;;; visual line mode

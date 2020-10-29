@@ -17,6 +17,8 @@
         yasnippet-snippets
         all-the-icons
         go-dlv                          ; go debug tool `delve'
+        ;; https://github.com/yjwen/org-reveal
+        ox-reveal
         ))
 
 ;; programmatically define the init functions
@@ -29,3 +31,12 @@
                     (spacemacs/system-is-linux)
                     (memq window-system '(x)))
             (exec-path-from-shell-initialize))))
+
+(defun m-layer/init-ox-reveal ()
+  (use-package ox-reveal
+    :config
+    (progn
+      (load-library "ox-reveal")
+      )
+    )
+  )
