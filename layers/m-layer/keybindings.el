@@ -9,8 +9,9 @@
 (global-set-key (kbd "C-x o") 'ace-window)
 (evil-leader/set-key "." 'ace-jump-buffer)
 
-;; helm
-(global-set-key (kbd "C-c i") 'helm-imenu)
+;; counsel
+(global-set-key (kbd "C-c i") 'counsel-imenu)
+(spacemacs/set-leader-keys "ph" 'counsel-projectile)
 
 ;;; Hook key-bindings
 ;; coffee-mode

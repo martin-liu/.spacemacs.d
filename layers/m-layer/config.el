@@ -67,7 +67,7 @@
 
 ;; Styles
 ;;; visual line mode
-(global-visual-line-mode)
+(global-linum-mode)
 
 ;;; all-the-icons
 (setq inhibit-compacting-font-caches t)
