@@ -105,6 +105,11 @@
 (setq python-shell--interpreter 'python)
 (setq python-shell--interpreter-args "-i")
 (setq python-shell-prompt-detect-failure-warning nil)
+;; pyvenv
+(setq pyvenv-virtual-env-name 'venv)
+;; dap
+;; override executable find logic to ensure local `.venv' will be recognized
+(defun dap-python--pyenv-executable-find (command) (executable-find command))
 
 ;;; Scheme
 ;; geiser
