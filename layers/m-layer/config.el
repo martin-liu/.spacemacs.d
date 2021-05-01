@@ -66,8 +66,6 @@
 (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
 
 ;; Styles
-;;; visual line mode
-(global-linum-mode)
 
 ;;; all-the-icons
 (setq inhibit-compacting-font-caches t)
@@ -92,7 +90,7 @@
        "/usr/local/bin/pandoc"
        " --from=markdown --to=html5"
        " --standalone"
-       " --include-in-header=" (concat default-directory "files/markdown_header.tpl")
+       ;" --include-in-header=" (concat default-directory "files/markdown_header.tpl")
        " --metadata pagetitle=\"markdown\""
        " --css=\"https://cdn.jsdelivr.net/gh/nicolashery/markdownpad-github/markdownpad-github.css\""
        " --webtex"
@@ -105,6 +103,8 @@
 (setq python-shell--interpreter 'python)
 (setq python-shell--interpreter-args "-i")
 (setq python-shell-prompt-detect-failure-warning nil)
+;; enable indent guide
+(add-hook 'python-mode-hook (lambda () (spacemacs/toggle-indent-guide-on)))
 ;; pyvenv
 (setq pyvenv-virtual-env-name 'venv)
 ;; dap

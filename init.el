@@ -68,7 +68,8 @@ values."
      ;scala
      kotlin
      (clojure :variables clojure-enable-fancify-symbols t)
-     (python :variables python-backend 'lsp)
+     (python :variables
+             python-backend 'lsp)
      ;php
      html
      javascript
@@ -76,6 +77,7 @@ values."
      react
      (go :variables go-backend 'lsp)
      ;rust
+     c-c++
 
      docker
      protobuf
