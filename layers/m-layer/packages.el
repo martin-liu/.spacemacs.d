@@ -11,10 +11,9 @@
 
 (setq m-layer-packages
       '(
-        exec-path-from-shell
+        ;exec-path-from-shell
         color-theme-sanityinc-tomorrow
         ace-jump-buffer
-        yasnippet-snippets
         all-the-icons
         go-dlv                          ; go debug tool `delve'
         ;; https://github.com/yjwen/org-reveal
@@ -25,12 +24,12 @@
 (dolist (pkg m-layer-packages)
     (eval `(defun ,(intern (format "m-layer/init-%S" pkg)) nil)))
 
-(defun m-layer/init-exec-path-from-shell()
-  (use-package exec-path-from-shell
-    :init (when (or (spacemacs/system-is-mac)
-                    (spacemacs/system-is-linux)
-                    (memq window-system '(x)))
-            (exec-path-from-shell-initialize))))
+;; (defun m-layer/init-exec-path-from-shell()
+;;   (use-package exec-path-from-shell
+;;     :init (when (or (spacemacs/system-is-mac)
+;;                     (spacemacs/system-is-linux)
+;;                     (memq window-system '(x)))
+;;             (exec-path-from-shell-initialize))))
 
 (defun m-layer/init-ox-reveal ()
   (use-package ox-reveal
